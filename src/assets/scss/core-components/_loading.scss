@@ -1,0 +1,139 @@
+.loading-container {
+  position: relative;
+  min-height: 150px;
+}
+
+.dimmer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 800;
+  background-color: rgba(255,255,255,.85);
+  text-align: center;
+  vertical-align: middle;
+
+  &__wrap {
+    position: relative;
+  }
+
+  &.inverted {
+    background-color: rgba(0,0,0,.85);
+
+    .svg-path {
+      stroke: #ffffff;
+    }
+  }
+}
+
+
+//**********------------------------------------------------------------------------------------------------------------
+//***   Loading type: line
+//
+.btn-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: not-allowed!important;
+
+  &__wrap {
+    background-color: $text-color-gray-light;
+    overflow: hidden;
+    width: 80%;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+  }
+
+  &__bar {
+    animation: loading-bar-line 2s ease-in-out infinite;
+    background-color: #ffffff;
+    height: 100%;
+    position: absolute;
+    width: 50%;
+  }
+
+  &__text {
+    opacity: 0;
+  }
+}
+
+@keyframes loading-bar-line {
+  0%, 100% { transform: translateX(-50%); }
+  50%      { transform: translateX(150%); }
+}
+
+//**********------------------------------------------------------------------------------------------------------------
+//***   Loading type: circle
+//
+.s-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+}
+
+.svg-e {
+  animation: loading-rotate 2s linear infinite;
+  height: 100%;
+  transform-origin: center center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.svg-path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  animation: loading-dash 1.5s ease-in-out infinite;
+  stroke-linecap: round;
+  stroke: $primary-color;
+
+  .s-white & {
+    stroke: #ffffff;
+  }
+}
+
+@keyframes loading-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loading-dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+.btn-loading-s {
+  color: transparent!important;
+  position: relative;
+
+  .s-loading {
+    width: 30px;
+  }
+
+  .txt-loading {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,42 @@
+.p-error {
+  width: 100%;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-color: #ffffff;
+  font-size: 1.3rem;
+
+  h3 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+
+  a {
+    color: $primary-color;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  &__content {
+    padding-top: 50px;
+    padding-bottom: 30px;
+  }
+
+  &__head {
+    display: flex;
+    margin-bottom: 50px;
+  }
+
+  &__body {
+
+    margin-bottom: 20px;
+  }
+
+}
+.box-404 {
+  background-color: #6D6F72;
+  padding: 10px 20px;
+  font-size: 3rem;
+  color: #ffffff;
+  border-radius: 2px;
+}

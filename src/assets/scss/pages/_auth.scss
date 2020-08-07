@@ -1,0 +1,17 @@
+.auth-body {
+  display: flex;
+  padding: 40px 0;
+  justify-content: center;
+
+  .app-logo {
+    margin-bottom: 20px;
+  }
+}
+
+.login-form {
+  width: 400px;
+  max-width: 80%;
+  border-radius: 2px;
+  background: #ffffff;
+  padding: 20px 0;
+}

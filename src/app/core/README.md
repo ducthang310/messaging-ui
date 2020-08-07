@@ -1,0 +1,6 @@
+## Core
+- Auth: guard, interceptor, permission...
+- Error handler
+- Version check
+- Api configuration
+...

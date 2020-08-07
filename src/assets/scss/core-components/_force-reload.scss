@@ -1,0 +1,40 @@
+.force-reload {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999999;
+  background: #000000;
+
+  &__box {
+    position: absolute;
+    width: 80%;
+    max-width: 500px;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30px;
+  }
+
+  &__top {
+    color: $primary-color;
+    font-size: 1.6rem;
+
+    img {
+      width: 100px;
+      margin-right: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .force-reload {
+    &__top {
+      font-size: 1.4rem;
+      img {
+        width: 60px;
+      }
+    }
+  }
+}

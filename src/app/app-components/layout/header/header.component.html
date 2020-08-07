@@ -1,0 +1,43 @@
+<header class="header">
+  <app-logo></app-logo>
+
+  <div class="header-right">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" href="https://shiroad.com">ShiRoad</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://shiroad.com/my-applications">Apps</a>
+      </li>
+    </ul>
+
+    <span class="header-right__divider"></span>
+
+    <ng-container *ngIf="false">
+      <div class="header-info">
+        <span class="header-info__greeting">Welcome, Johnny</span>
+        <span class="header-info__version">Version : 2.2.2.38</span>
+      </div>
+
+      <div ngbDropdown class="header-user d-inline-block m-dropdown" placement="bottom-right">
+        <button type="button" class="btn btn-menu" id="dr-top-account" ngbDropdownToggle>
+          JV
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dr-top-account" class="box-shadow-sp">
+          <a routerLink="/account" class="dropdown-item a-dark">
+            <i class="material-icons md-20">settings</i>Account
+          </a>
+          <a routerLink="/logout" class="dropdown-item a-dark">
+            <i class="material-icons md-20">exit_to_app</i>Logout
+          </a>
+        </div>
+      </div>
+    </ng-container>
+
+    <div class="header-buttons">
+      <a routerLink="/register" type="button" class="btn btn-default">Sign Up</a>
+      <a routerLink="/login" type="button" class="btn btn-blue">LOG IN</a>
+    </div>
+  </div>
+
+</header>

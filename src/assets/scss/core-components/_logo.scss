@@ -1,0 +1,27 @@
+.app-logo {
+  font-family: 'Jura', sans-serif;
+  color: $logo-color;
+  font-size: 26px;
+  font-weight: bold;
+  height: 35px;
+  display: flex;
+  align-items: center;
+
+  svg {
+    height: 100%;
+  }
+
+  &__divider {
+    display: block;
+    height: 100%;
+    width: 2px;
+    background: #D6001C;
+    margin: 0 10px;
+  }
+
+  &:hover {
+    color: $logo-color;
+    text-decoration: none;
+    opacity: 0.8;
+  }
+}

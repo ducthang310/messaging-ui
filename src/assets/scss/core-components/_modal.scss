@@ -1,0 +1,131 @@
+.modal-backdrop, .modal {
+  z-index: 800!important;
+}
+
+.modal-header {
+  border-bottom-color: rgba(0,0,0,0.25);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.modal-header-heading {
+  min-height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.modal-footer {
+  justify-content: space-between;
+}
+
+.modal-header-search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+
+  .input {
+    border: none;
+    flex: 1;
+
+    &:focus, &:active {
+      outline: none;
+      border: none;
+    }
+  }
+
+  .btn {
+    padding-left: 0;
+  }
+}
+
+.btn-modal-close {
+  padding: 10px;
+  height: auto;
+  background: transparent;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  color: rgba(0,0,0,0.25);
+
+  &:hover {
+    color: rgba(0,0,0,0.75);
+  }
+}
+
+.modal-confirm {
+  .modal-body {
+    font-size: 1.4rem;
+  }
+  .modal-footer {
+    justify-content: flex-end;
+
+    .btn {
+      min-width: 100px;
+    }
+  }
+}
+
+.modal-selection {
+  .modal-content, .selection-wrap, .modal-body, .selection-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .modal-content {
+    max-height: 90vh;
+  }
+
+  .selection-wrap, .modal-body, .selection-list {
+    flex-grow: 1;
+    overflow: hidden;
+  }
+
+  .selection-list {
+    &__table {
+      flex-grow: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+}
+
+.scrollable-section {
+  flex-grow: 1;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+
+  &__wrap {
+    height: calc(100vh - 190px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .s-pa {
+      margin-top: 15px;
+      margin-bottom: 10px;
+      min-height: 50px;
+    }
+
+    &.height-auto {
+      height: auto!important;
+      max-height: calc(100vh - 190px);
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .scrollable-section {
+    &__wrap {
+      height: auto;
+    }
+  }
+}

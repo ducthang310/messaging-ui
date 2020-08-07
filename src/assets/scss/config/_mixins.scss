@@ -1,0 +1,157 @@
+/**
+ *
+ * FONT SMOOTHING
+ *
+ * Changes the font rendering,
+ * allowing thinner fonts
+ */
+
+@mixin fontSmoothing {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+
+
+@mixin min-768 {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin min-992 {
+    @media screen and (min-width:992px) {
+        @content;
+    }
+}
+@mixin min-1025 {
+    @media screen and (min-width:1025px) {
+        @content;
+    }
+}
+@mixin min-1200 {
+    @media screen and (min-width:1200px) {
+        @content;
+    }
+}
+
+@mixin min-1921 {
+    @media screen and (min-width:1921px) {
+        @content;
+    }
+}
+//============max-width: 1024==============///
+@mixin max-1024 {
+    @media screen and (max-width: 1024px) {
+        @content;
+    }
+}
+
+
+
+//============max-width: 991==============///
+@mixin max-991 {
+    @media screen and (max-width: 991px) {
+        @content;
+    }
+}
+
+@mixin range-1025-1200 {
+    @media (min-width: 1025px) and (max-width: 1200px) {
+        @content;
+    }
+}
+
+
+@mixin range-992-1200 {
+    @media (min-width: 992px) and (max-width: 1200px) {
+        @content;
+    }
+}
+@mixin range-992-1024 {
+    @media (min-width: 992px) and (max-width: 1024px) {
+        @content;
+    }
+}
+
+
+@mixin range-768-991 {
+    @media (min-width: 768px) and (max-width: 991px) {
+        @content;
+    }
+}
+
+
+@mixin range-768-1024 {
+    @media (min-width: 768px) and (max-width: 1024px) {
+        @content;
+    }
+}
+
+
+@mixin max-767 {
+    @media screen and (max-width:767px) {
+        @content;
+    }
+}
+
+@mixin max-480 {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin max-375 {
+    @media screen and (max-width: 375px) {
+        @content;
+    }
+}
+
+@mixin print {
+    @media print {
+        @content;
+    }
+}
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+
+@mixin section-box-shadow() {
+  background-color: #ffffff;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2);
+}
+
+@mixin field-border() {
+  border-radius: 2px;
+  background-color: #ffffff;
+  border: 1px solid rgba(0,0,0,0.25);
+}
+
+@mixin transition-color-bkg-border () {
+  transition-duration: 167ms;
+  transition-property: background-color,box-shadow,color;
+  transition-timing-function: cubic-bezier(0,0,.2,1);
+}
+
+@mixin ul-clean () {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin three-dots () {
+  white-space: nowrap;
+  overflow:hidden !important;
+  text-overflow: ellipsis;
+}
