@@ -12,8 +12,8 @@ const readFile = util.promisify(fs.readFile);
 
 console.log('\nRunning post-build tasks');
 
-// our version.json will be in the deploy folder
-const versionFilePath = path.join(__dirname + '/../deploy/version.json');
+// our version.json will be in the dist folder
+const versionFilePath = path.join(__dirname + '/../dist/version.json');
 
 let mainHash = '';
 let mainBundleFile = '';
@@ -21,8 +21,8 @@ let mainBundleFile = '';
 // RegExp to find main.bundle.js, even if it doesn't include a hash in it's name (dev build)
 let mainBundleRegexp = /^main.?([a-z0-9]*)?(\.bundle)?.js$/;
 
-// read the deploy folder files and find the one we're looking for
-readDir(path.join(__dirname, '../deploy/'))
+// read the dist folder files and find the one we're looking for
+readDir(path.join(__dirname, '../dist/'))
   .then(files => {
     mainBundleFile = files.find(f => mainBundleRegexp.test(f));
 
@@ -49,7 +49,7 @@ readDir(path.join(__dirname, '../deploy/'))
   console.log(`Replacing hash in the ${mainBundleFile}`);
 
   // replace hash placeholder in our main.js file so the code knows it's current hash
-  const mainFilepath = path.join(__dirname, '../deploy/', mainBundleFile);
+  const mainFilepath = path.join(__dirname, '../dist/', mainBundleFile);
   return readFile(mainFilepath, 'utf8')
     .then(mainFileData => {
       const replacedFile = mainFileData.replace('{{POST_BUILD_ENTERS_HASH_HERE}}', mainHash);
