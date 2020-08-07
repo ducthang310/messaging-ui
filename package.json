@@ -3,11 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --open --port 3000",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "post-build": "node ./build/post-build.js",
+    "build-production": "ng build --prod --aot --outputPath=deploy && node ./build/post-build.js",
+    "build-staging": "ng build --configuration=staging --outputPath=deploy && node ./build/post-build.js"
   },
   "private": true,
   "dependencies": {
